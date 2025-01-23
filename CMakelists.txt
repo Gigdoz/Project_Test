@@ -1,0 +1,19 @@
+cmake_minimum_required(VERSION 3.0)
+
+project(project_test VERSION 1.0.0 LANGUAGES CXX)
+
+set(SOURCES lib/math.cpp)
+set(INCLUDES lib/math.h)
+
+
+add_library(Lib ${INCLUDES} ${SOURCES})
+
+add_executable(cpp_test test/test_lib.cpp)
+target_link_libraries(cpp_test PRIVATE Lib)
+
+enable_testing()
+
+add_test(
+  NAME cpp_test
+  COMMAND $<TARGET_FILE:cpp_test>
+  )
