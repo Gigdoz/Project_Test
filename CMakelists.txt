@@ -8,7 +8,7 @@ set(INCLUDES lib/math.h)
 
 add_library(Lib ${INCLUDES} ${SOURCES})
 
-add_executable(cpp_test test/test_lib.cpp)
+add_executable(cpp_test test/test_lib.cpp )
 target_link_libraries(cpp_test PRIVATE Lib)
 
 enable_testing()
